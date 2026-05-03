@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+body {
+  margin: 0;
+}
+
+/* Topbar oscuro */
+.p-menubar.app-topbar {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: #111827; /* gris oscuro */
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 2px 12px rgba(17, 24, 39, 0.18);
+}
+
+/* Texto e iconos en blanco */
+.p-menubar.app-topbar .p-menubar-item-link,
+.p-menubar.app-topbar .p-menubar-item-label,
+.p-menubar.app-topbar .p-menubar-item-icon,
+.p-menubar.app-topbar .p-menuitem-icon {
+  color: #ffffff;
+}
+
+.p-menubar.app-topbar .p-menubar-item-link {
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.p-menubar.app-topbar .p-menubar-item-content:hover {
+  background: transparent;
+}
+
+.p-menubar.app-topbar .p-menubar-item-content:hover .p-menubar-item-link,
+.p-menubar.app-topbar .p-menubar-item-content:hover .p-menubar-item-label,
+.p-menubar.app-topbar .p-menubar-item-content:hover .p-menubar-item-icon,
+.p-menubar.app-topbar .p-menubar-item-content:hover .p-menuitem-icon {
+  color: #000000;
+}
+
+.p-menubar.app-topbar .p-menubar-item-content:hover .p-menubar-item-link {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.18);
+}
+
+/* Seleccionado */
+.p-menubar.app-topbar .p-menubar-item-link-active {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+}
+
+.p-menubar.app-topbar .p-menubar-item-link-active .p-menubar-item-label,
+.p-menubar.app-topbar .p-menubar-item-link-active .p-menubar-item-icon,
+.p-menubar.app-topbar .p-menubar-item-link-active .p-menuitem-icon {
+  color: #000000;
+}
+
+/* Marca */
+.app-topbar__brand {
+  color: #ffffff;
+  font-weight: 700;
+}
