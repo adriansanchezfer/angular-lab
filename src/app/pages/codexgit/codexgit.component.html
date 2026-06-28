@@ -1,0 +1,127 @@
+<section class="git-page">
+  <header class="git-page__header">
+    <p-tag value="Git" severity="contrast"></p-tag>
+    <div>
+      <h1>Git en Equipo</h1>
+      <p>
+        Git no es solo guardar cambios: es coordinar trabajo entre personas. Un
+        buen flujo evita pisarse, mantiene un historial entendible y hace que las
+        revisiones sean mas rapidas.
+      </p>
+    </div>
+  </header>
+
+  <section class="flow-panel">
+    <span class="eyebrow">Flujo recomendado</span>
+    <h2>De tarea a Pull Request</h2>
+    <div class="flow-grid">
+      @for (step of teamFlow; track step.title) {
+        <article>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+          <pre><code>{{ step.command }}</code></pre>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="secondary-panel">
+    <div class="secondary-panel__intro">
+      <span class="eyebrow">Apoyo para entrevista</span>
+      <h2>Comandos secundarios que conviene conocer</h2>
+      <p>
+        No forman parte del flujo principal diario, pero ayudan a explicar que
+        entiendes historial, trazabilidad y recuperacion de cambios.
+      </p>
+    </div>
+
+    <div class="secondary-grid">
+      @for (item of secondaryCommands; track item.title) {
+        <article>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.when }}</p>
+          <pre><code>{{ item.command }}</code></pre>
+          <div class="secondary-note">
+            <strong>Ojo en equipo</strong>
+            <p>{{ item.caution }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="vscode-panel">
+    <div class="vscode-panel__intro">
+      <div>
+        <span class="eyebrow">VS Code</span>
+        <h2>Resolver conflictos desde el editor</h2>
+        <p>
+          VS Code ayuda mucho porque convierte los marcadores de conflicto en
+          acciones visuales. Aun asi, la decision sigue siendo tuya: tienes que
+          entender que cambio representa cada lado y dejar un resultado coherente.
+        </p>
+      </div>
+      <div class="conflict-mock" aria-label="Ejemplo visual de conflicto en VS Code">
+        <div class="mock-title">product.service.ts</div>
+        <div class="mock-actions">
+          <span>Accept Current</span>
+          <span>Accept Incoming</span>
+          <span>Accept Both</span>
+          <span>Compare</span>
+        </div>
+        <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Current Change
+return this.http.get&lt;Product[]&gt;('/api/products');
+=======
+return this.http.get&lt;ProductResponse&gt;('/api/products?limit=10');
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; Incoming Change</code></pre>
+      </div>
+    </div>
+
+    <div class="vscode-grid">
+      @for (step of vsCodeConflictSteps; track step.title) {
+        <article>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+          <pre><code>{{ step.action }}</code></pre>
+        </article>
+      }
+    </div>
+  </section>
+
+  <nav class="filter-bar" aria-label="Filtrar comandos Git por categoria">
+    @for (category of categories(); track category) {
+      <button
+        pButton
+        type="button"
+        [label]="category"
+        [severity]="selectedCategory() === category ? 'contrast' : 'secondary'"
+        (click)="selectCategory(category)"
+      ></button>
+    }
+  </nav>
+
+  <div class="command-grid">
+    @for (item of filteredCommands(); track item.title) {
+      <article class="command-card">
+        <span class="command-card__category">{{ item.category }}</span>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+
+        <div class="command-box">
+          <strong>Comando base</strong>
+          <code>{{ item.command }}</code>
+        </div>
+
+        <div>
+          <strong>Ejemplo</strong>
+          <pre><code>{{ item.example }}</code></pre>
+        </div>
+
+        <div class="team-tip">
+          <strong>Tip de equipo</strong>
+          <p>{{ item.teamTip }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

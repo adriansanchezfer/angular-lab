@@ -1,0 +1,149 @@
+<section class="learning-page">
+  <header class="learning-page__header">
+    <p-tag value="HTTP" severity="warn"></p-tag>
+    <div>
+      <h1>Codex HTTP</h1>
+      <p>
+        Una peticion HTTP es la conversacion entre tu frontend y un servidor:
+        Angular envia un metodo, una URL, cabeceras y a veces un cuerpo; la API
+        responde con un codigo de estado, cabeceras y datos. La parte importante
+        en frontend no es solo "hacer fetch": tambien es representar carga,
+        errores, reintentos, datos vacios y transformaciones. Aqui usamos
+        DummyJSON, una API gratuita de prototipado con productos, usuarios,
+        posts y todos.
+      </p>
+    </div>
+  </header>
+
+  <section class="explanation-panel">
+    <span class="eyebrow">Ciclo de vida</span>
+    <h2>Que pasa cuando una pantalla pide datos</h2>
+    <div class="note-grid">
+      @for (note of requestLifecycle; track note.title) {
+        <article>
+          <h3>{{ note.title }}</h3>
+          <p>{{ note.body }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <article class="live-panel">
+    <div class="live-panel__header">
+      <div>
+        <span class="eyebrow">GET real</span>
+        <h2>{{ apiBaseUrl }}/products?limit=6</h2>
+        <p>
+          Este bloque consume datos reales con HttpClient, los tipa como
+          productos y los pinta con async pipe.
+        </p>
+      </div>
+      <button pButton type="button" icon="pi pi-refresh" label="Recargar" (click)="reload()"></button>
+    </div>
+
+    @if (isLoading()) {
+      <p class="status">Cargando productos...</p>
+    }
+
+    @if (errorMessage()) {
+      <p class="status status--error">{{ errorMessage() }}</p>
+    }
+
+    @if (products$ | async; as products) {
+      <div class="posts-grid">
+        @for (product of products; track product.id) {
+          <article class="post-card">
+            @if (product.thumbnail) {
+              <img [src]="product.thumbnail" [alt]="product.title" />
+            } @else {
+              <div class="product-placeholder">
+                <i class="pi pi-box"></i>
+              </div>
+            }
+            <span>{{ product.category }} - {{ product.rating }}/5</span>
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description }}</p>
+            <strong>{{ product.price }} EUR</strong>
+          </article>
+        }
+      </div>
+    }
+  </article>
+
+  <div class="guide-grid">
+    <section class="explanation-panel">
+      <span class="eyebrow">Metodos</span>
+      <h2>Que intencion expresa cada metodo</h2>
+      <div class="stacked-notes">
+        @for (method of methodGuide; track method.title) {
+          <article>
+            <h3>{{ method.title }}</h3>
+            <p>{{ method.body }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="explanation-panel">
+      <span class="eyebrow">Status codes</span>
+      <h2>Como leer la respuesta</h2>
+      <div class="stacked-notes">
+        @for (status of statusGuide; track status.title) {
+          <article>
+            <h3>{{ status.title }}</h3>
+            <p>{{ status.body }}</p>
+          </article>
+        }
+      </div>
+    </section>
+  </div>
+
+  <article class="console-panel">
+    <div>
+      <span class="eyebrow">Prueba metodos</span>
+      <h2>Consola HTTP: {{ selectedMethod() }}</h2>
+      <p>
+        Estos botones ejecutan peticiones reales contra DummyJSON. Las escrituras
+        son simuladas por la API: responden como si guardaran, pero no modifican
+        permanentemente el servidor. Si no hay conexion, veras una respuesta
+        local con la misma forma mental para poder practicar igual.
+      </p>
+    </div>
+
+    <div class="actions">
+      <button pButton type="button" label="GET" icon="pi pi-search" (click)="runGet()"></button>
+      <button pButton type="button" label="POST" icon="pi pi-plus" severity="success" (click)="runPost()"></button>
+      <button pButton type="button" label="PATCH" icon="pi pi-pencil" severity="warn" (click)="runPatch()"></button>
+      <button pButton type="button" label="DELETE" icon="pi pi-trash" severity="danger" (click)="runDelete()"></button>
+    </div>
+
+    @if (isActionLoading()) {
+      <p class="status">Ejecutando {{ selectedMethod() }}...</p>
+    }
+
+    <pre><code>{{ actionResponse() }}</code></pre>
+  </article>
+
+  <div class="card-grid">
+    @for (example of examples; track example.title) {
+      <article class="example-card">
+        <span class="method-pill">{{ example.method }}</span>
+        <h2>{{ example.title }}</h2>
+        <p>{{ example.description }}</p>
+
+        <div class="request-box">
+          <strong>Endpoint</strong>
+          <code>{{ example.endpoint }}</code>
+        </div>
+
+        <div class="request-box">
+          <strong>Body</strong>
+          <pre><code>{{ example.body }}</code></pre>
+        </div>
+
+        <strong class="code-title">Codigo Angular</strong>
+        <pre><code>{{ example.code }}</code></pre>
+      </article>
+    }
+  </div>
+</section>

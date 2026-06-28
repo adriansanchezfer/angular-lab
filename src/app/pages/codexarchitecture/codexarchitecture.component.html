@@ -1,0 +1,53 @@
+<section class="architecture-page">
+  <header class="architecture-page__header">
+    <p-tag value="Arquitectura" severity="info"></p-tag>
+    <div>
+      <h1>Arquitectura Frontend</h1>
+      <p>
+        La arquitectura frontend define como crece la aplicacion: donde vive cada
+        pieza, que puede depender de que, como se organizan los dominios y que
+        reglas protegen al equipo de crear una bola de barro elegante.
+      </p>
+    </div>
+  </header>
+
+  <section class="principles-panel">
+    <span class="eyebrow">Principios</span>
+    <div class="principles-grid">
+      @for (principle of principles; track principle) {
+        <article>
+          <i class="pi pi-compass"></i>
+          <span>{{ principle }}</span>
+        </article>
+      }
+    </div>
+  </section>
+
+  <nav class="filter-bar" aria-label="Filtrar arquitectura por categoria">
+    @for (category of categories(); track category) {
+      <button
+        pButton
+        type="button"
+        [label]="category"
+        [severity]="selectedCategory() === category ? 'info' : 'secondary'"
+        (click)="selectCategory(category)"
+      ></button>
+    }
+  </nav>
+
+  <div class="architecture-grid">
+    @for (block of filteredBlocks(); track block.title) {
+      <article class="architecture-card" [class.architecture-card--important]="block.important">
+        <div class="architecture-card__top">
+          <span class="architecture-card__category">{{ block.category }}</span>
+          @if (block.important) {
+            <span class="priority-badge">Clave</span>
+          }
+        </div>
+        <h2>{{ block.title }}</h2>
+        <p>{{ block.description }}</p>
+        <pre><code>{{ block.example }}</code></pre>
+      </article>
+    }
+  </div>
+</section>

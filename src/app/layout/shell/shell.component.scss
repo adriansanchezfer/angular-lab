@@ -1,1 +1,9 @@
+.app-shell__content {
+  padding: 5.75rem 1rem 1rem;
+}
 
+@media (max-width: 768px) {
+  .app-shell__content {
+    padding-top: 6.5rem;
+  }
+}

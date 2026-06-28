@@ -1,0 +1,65 @@
+<section class="learning-page">
+  <header class="learning-page__header">
+    <p-tag value="Frontend" severity="info"></p-tag>
+    <div>
+      <h1>Buenas Practicas Frontend</h1>
+      <p>
+        Una buena interfaz no es solo que "se vea bien": tambien debe ser
+        comprensible, mantenible, accesible, rapida y tolerante a fallos. Estas
+        practicas ayudan a que una app Angular crezca sin que cada pantalla se
+        convierta en una pieza fragil.
+      </p>
+    </div>
+  </header>
+
+  <section class="checklist-panel">
+    <span class="eyebrow">Checklist base</span>
+    <div class="checklist-grid">
+      @for (item of checklist; track item) {
+        <article>
+          <i class="pi pi-check"></i>
+          <span>{{ item }}</span>
+        </article>
+      }
+    </div>
+  </section>
+
+  <nav class="filter-bar" aria-label="Filtrar buenas practicas por categoria">
+    @for (category of categories(); track category) {
+      <button
+        pButton
+        type="button"
+        [label]="category"
+        [severity]="selectedCategory() === category ? 'info' : 'secondary'"
+        (click)="selectCategory(category)"
+      ></button>
+    }
+  </nav>
+
+  <div class="practice-grid">
+    @for (example of filteredExamples(); track example.title) {
+      <article class="practice-card" [class.practice-card--important]="example.important">
+        <div class="practice-card__top">
+          <span class="practice-card__category">{{ example.category }}</span>
+          @if (example.important) {
+            <span class="priority-badge">Clave</span>
+          }
+        </div>
+        <h2>{{ example.title }}</h2>
+        <p>{{ example.description }}</p>
+
+        <div class="comparison">
+          <section>
+            <strong>Mejor evitar</strong>
+            <pre><code>{{ example.avoid }}</code></pre>
+          </section>
+
+          <section>
+            <strong>Recomendado</strong>
+            <pre><code>{{ example.recommended }}</code></pre>
+          </section>
+        </div>
+      </article>
+    }
+  </div>
+</section>

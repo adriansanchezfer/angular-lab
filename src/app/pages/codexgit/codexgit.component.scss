@@ -1,0 +1,302 @@
+.git-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.git-page__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 72rem;
+
+  h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+}
+
+.flow-panel,
+.secondary-panel,
+.vscode-panel,
+.command-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.vscode-panel__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.9fr);
+  gap: 1rem;
+  align-items: stretch;
+
+  h2 {
+    margin: 0.25rem 0 0.75rem;
+    color: #111827;
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+}
+
+.conflict-mock {
+  overflow: hidden;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #0f172a;
+}
+
+.mock-title {
+  border-bottom: 1px solid #334155;
+  background: #111827;
+  padding: 0.65rem 0.875rem;
+  color: #f9fafb;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.mock-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #1f2937;
+
+  span {
+    border-radius: 999px;
+    background: #dbeafe;
+    padding: 0.25rem 0.5rem;
+    color: #1e3a8a;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+}
+
+.conflict-mock pre {
+  border-radius: 0;
+}
+
+.vscode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+
+  article {
+    min-width: 0;
+    border-radius: 6px;
+    background: #f3f4f6;
+    padding: 0.875rem;
+  }
+
+  h3 {
+    margin: 0 0 0.5rem;
+    color: #111827;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0 0 0.75rem;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+}
+
+.eyebrow,
+.command-card__category {
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.flow-panel h2 {
+  margin: 0.25rem 0 1rem;
+  color: #111827;
+  font-size: 1.35rem;
+}
+
+.secondary-panel__intro {
+  max-width: 56rem;
+
+  h2 {
+    margin: 0.25rem 0 0.5rem;
+    color: #111827;
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+}
+
+.flow-grid,
+.secondary-grid,
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.flow-grid article {
+  min-width: 0;
+  border-radius: 6px;
+  background: #f3f4f6;
+  padding: 0.875rem;
+
+  h3 {
+    margin: 0 0 0.5rem;
+    color: #111827;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+}
+
+.secondary-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1rem;
+
+  article {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: 6px;
+    background: #f8fafc;
+    padding: 0.875rem;
+  }
+
+  h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+}
+
+.secondary-note {
+  border-left: 3px solid #f59e0b;
+  padding-left: 0.75rem;
+
+  strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #111827;
+    font-size: 0.8125rem;
+  }
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.command-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.875rem;
+
+  h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #111827;
+    font-size: 0.875rem;
+  }
+}
+
+.command-box,
+.team-tip {
+  border-radius: 6px;
+  background: #f3f4f6;
+  padding: 0.75rem;
+}
+
+.command-box code {
+  color: #111827;
+  overflow-wrap: anywhere;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 0;
+  border-radius: 6px;
+  background: #111827;
+  padding: 0.875rem;
+  color: #f9fafb;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .git-page {
+    padding: 1rem;
+  }
+
+  .git-page__header {
+    flex-direction: column;
+  }
+
+  .vscode-panel__intro,
+  .flow-grid,
+  .secondary-grid,
+  .vscode-grid,
+  .command-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .flow-grid,
+  .secondary-grid,
+  .vscode-grid,
+  .command-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vscode-panel__intro {
+    grid-template-columns: 1fr;
+  }
+}
