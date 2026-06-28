@@ -8,6 +8,11 @@ body {
 
 /* Topbar oscuro */
 .p-menubar.app-topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
   width: 100%;
   margin: 0;
   border: none;

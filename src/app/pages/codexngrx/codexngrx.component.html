@@ -1,0 +1,57 @@
+<section class="learning-page">
+  <header class="learning-page__header">
+    <p-tag value="NgRx" severity="contrast"></p-tag>
+    <div>
+      <h1>Codex NgRx</h1>
+      <p>
+        NgRx es una forma de organizar estado global con un flujo predecible:
+        los componentes despachan eventos, los reducers calculan estado, los
+        selectors lo leen y los effects gestionan tareas asincronas. Brilla
+        cuando la app tiene datos compartidos, muchas pantallas conectadas o
+        flujos complejos que necesitan trazabilidad.
+      </p>
+    </div>
+  </header>
+
+  <section class="flow-panel">
+    <span class="eyebrow">Flujo mental</span>
+    <div class="flow-list">
+      @for (step of flow; track step; let index = $index) {
+        <article>
+          <strong>{{ index + 1 }}</strong>
+          <span>{{ step }}</span>
+        </article>
+      }
+    </div>
+  </section>
+
+  <nav class="topic-tabs" aria-label="Seleccionar concepto NgRx">
+    @for (example of examples; track example.title) {
+      <button
+        pButton
+        type="button"
+        [label]="example.title"
+        [severity]="selectedTitle() === example.title ? 'contrast' : 'secondary'"
+        (click)="selectExample(example.title)"
+      ></button>
+    }
+  </nav>
+
+  <article class="active-card">
+    <span class="eyebrow">Concepto activo</span>
+    <h2>{{ activeExample().title }}</h2>
+    <p>{{ activeExample().description }}</p>
+    <pre><code>{{ activeExample().code }}</code></pre>
+  </article>
+
+  <div class="card-grid">
+    @for (example of examples; track example.title) {
+      @if (example.title !== activeExample().title) {
+        <article class="example-card">
+          <h2>{{ example.title }}</h2>
+          <p>{{ example.description }}</p>
+        </article>
+      }
+    }
+  </div>
+</section>

@@ -1,0 +1,172 @@
+.learning-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.learning-page__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 72rem;
+
+  h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+}
+
+.checklist-panel,
+.practice-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.eyebrow,
+.practice-card__category {
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  article {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 6px;
+    background: #f3f4f6;
+    padding: 0.75rem;
+    color: #374151;
+    line-height: 1.4;
+  }
+
+  i {
+    color: #047857;
+  }
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.practice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+
+  h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+}
+
+.practice-card--important {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px rgb(245 158 11 / 20%), 0 8px 20px rgb(15 23 42 / 10%);
+}
+
+.practice-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.priority-badge {
+  border-radius: 999px;
+  background: #fef3c7;
+  padding: 0.2rem 0.55rem;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.75rem;
+  margin-top: auto;
+
+  section {
+    min-width: 0;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #111827;
+    font-size: 0.875rem;
+  }
+
+  pre {
+    overflow-x: auto;
+    min-height: 9rem;
+    margin: 0;
+    border-radius: 6px;
+    background: #111827;
+    padding: 0.875rem;
+    color: #f9fafb;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .learning-page {
+    padding: 1rem;
+  }
+
+  .learning-page__header {
+    flex-direction: column;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checklist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .checklist-grid,
+  .practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,143 @@
+.jest-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.jest-page__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 72rem;
+
+  h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+}
+
+.basics-panel,
+.jest-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.eyebrow,
+.jest-card__category {
+  color: #047857;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.basics-grid,
+.jest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.basics-grid article {
+  display: flex;
+  gap: 0.75rem;
+  border-radius: 6px;
+  background: #f3f4f6;
+  padding: 0.875rem;
+  color: #374151;
+  line-height: 1.45;
+
+  i {
+    color: #047857;
+    margin-top: 0.1rem;
+  }
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.jest-card {
+  min-width: 0;
+
+  h2 {
+    margin: 0.25rem 0 0.75rem;
+    color: #111827;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.55;
+  }
+
+  pre {
+    overflow-x: auto;
+    margin: 1rem 0 0;
+    border-radius: 6px;
+    background: #111827;
+    padding: 0.875rem;
+    color: #f9fafb;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+}
+
+.jest-card--important {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px rgb(245 158 11 / 20%), 0 8px 20px rgb(15 23 42 / 10%);
+}
+
+.jest-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.priority-badge {
+  border-radius: 999px;
+  background: #fef3c7;
+  padding: 0.2rem 0.55rem;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .jest-page {
+    padding: 1rem;
+  }
+
+  .jest-page__header {
+    flex-direction: column;
+  }
+
+  .basics-grid,
+  .jest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .basics-grid,
+  .jest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

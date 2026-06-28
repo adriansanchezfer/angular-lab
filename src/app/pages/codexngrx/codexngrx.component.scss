@@ -1,0 +1,159 @@
+.learning-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.learning-page__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 72rem;
+
+  h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+}
+
+.flow-panel,
+.active-card,
+.example-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+}
+
+.topic-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.active-card {
+  h2 {
+    margin: 0.25rem 0 0.75rem;
+    color: #111827;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  pre {
+    overflow-x: auto;
+    margin: 1rem 0 0;
+    border-radius: 6px;
+    background: #111827;
+    padding: 0.875rem;
+    color: #f9fafb;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+.eyebrow {
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.flow-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  article {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 6px;
+    background: #f3f4f6;
+    padding: 0.75rem;
+  }
+
+  strong {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 999px;
+    background: #111827;
+    color: #ffffff;
+  }
+
+  span {
+    color: #374151;
+    line-height: 1.4;
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.example-card {
+  h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0.75rem 0 0;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+
+  pre {
+    overflow-x: auto;
+    margin: 1rem 0 0;
+    border-radius: 6px;
+    background: #111827;
+    padding: 0.875rem;
+    color: #f9fafb;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .learning-page {
+    padding: 1rem;
+  }
+
+  .learning-page__header {
+    flex-direction: column;
+  }
+
+  .flow-list,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .flow-list,
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

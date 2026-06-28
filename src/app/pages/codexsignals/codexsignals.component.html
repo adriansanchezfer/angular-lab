@@ -1,0 +1,115 @@
+<section class="learning-page">
+  <header class="learning-page__header">
+    <p-tag value="Angular" severity="success"></p-tag>
+    <div>
+      <h1>Codex Signals</h1>
+      <p>
+        Signals son primitivas reactivas para representar estado sincronizado
+        con la vista. A diferencia de una variable normal, Angular sabe quien
+        lee un signal y puede actualizar solo lo necesario cuando cambia.
+      </p>
+    </div>
+  </header>
+
+  <div class="demo-panel">
+    <div>
+      <span class="eyebrow">Demo interactiva</span>
+      <h2>Contador con signal y computed</h2>
+      <p>
+        Pulsa los botones y observa como cambian el valor base, el valor derivado
+        y el registro del effect. El contador es el signal editable; el doble y
+        el estado par/impar son computed que se recalculan solos.
+      </p>
+      <p>Valor actual: <strong>{{ counter() }}</strong></p>
+      <p>Doble calculado: <strong>{{ doubleCounter() }}</strong></p>
+      <p>Estado: <strong>{{ isEven() ? 'par' : 'impar' }}</strong></p>
+    </div>
+
+    <div class="actions">
+      <button pButton type="button" icon="pi pi-minus" label="Restar" (click)="decrement()"></button>
+      <button pButton type="button" icon="pi pi-plus" label="Sumar" (click)="increment()"></button>
+      <button pButton type="button" icon="pi pi-refresh" label="Reset" severity="secondary" (click)="reset()"></button>
+    </div>
+  </div>
+
+  <section class="explanation-panel">
+    <span class="eyebrow">Modelo mental</span>
+    <h2>Como pensar en Signals</h2>
+    <div class="note-grid">
+      @for (note of mentalModel; track note.title) {
+        <article>
+          <h3>{{ note.title }}</h3>
+          <p>{{ note.body }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <div class="content-grid">
+    <article class="demo-panel">
+      <div>
+        <span class="eyebrow">Estado derivado</span>
+        <h2>Tareas con signals</h2>
+        <p>Progreso: <strong>{{ progress() }}%</strong></p>
+        <p>Pendientes: <strong>{{ pendingTasks().length }}</strong></p>
+      </div>
+
+      <ul class="task-list">
+        @for (task of tasks(); track task.id) {
+          <li>
+            <p-checkbox
+              [binary]="true"
+              [ngModel]="task.done"
+              (ngModelChange)="toggleTask(task.id)"
+            ></p-checkbox>
+            <span [class.is-done]="task.done">{{ task.title }}</span>
+          </li>
+        }
+      </ul>
+    </article>
+
+    <article class="demo-panel">
+      <div>
+        <span class="eyebrow">effect</span>
+        <h2>Ultimas reacciones</h2>
+      </div>
+      <ul class="event-list">
+        @for (message of effectMessages(); track message) {
+          <li>{{ message }}</li>
+        }
+      </ul>
+    </article>
+  </div>
+
+  <div class="concept-grid">
+    @for (concept of concepts; track concept.name) {
+      <article class="demo-panel">
+        <span class="eyebrow">{{ concept.name }}</span>
+        <p>{{ concept.useCase }}</p>
+      </article>
+    }
+  </div>
+
+  <section class="explanation-panel">
+    <span class="eyebrow">Errores comunes</span>
+    <h2>Lo que conviene vigilar</h2>
+    <div class="note-grid">
+      @for (mistake of commonMistakes; track mistake.title) {
+        <article>
+          <h3>{{ mistake.title }}</h3>
+          <p>{{ mistake.body }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <div class="card-grid">
+    @for (example of examples; track example.title) {
+      <article class="example-card">
+        <h2>{{ example.title }}</h2>
+        <p>{{ example.description }}</p>
+        <pre><code>{{ example.code }}</code></pre>
+      </article>
+    }
+  </div>
+</section>

@@ -11,15 +11,51 @@ import { MenuItem } from 'primeng/api';
 export class TopbarComponent {
    items: MenuItem[] = [
     {
-      label: 'Componentes',
-      icon: 'pi pi-th-large',
-      routerLink: '/',
+      label: 'Codex RxJS',
+      icon: 'pi pi-bolt',
+      routerLink: '/codexrxjs',
       routerLinkActiveOptions: { exact: true }
     },
     {
-      label: 'Laboratorio',
+      label: 'Signals',
+      icon: 'pi pi-sparkles',
+      routerLink: '/codexsignals',
+      routerLinkActiveOptions: { exact: true }
+    },
+    {
+      label: 'HTTP',
+      icon: 'pi pi-cloud-download',
+      routerLink: '/codexhttp',
+      routerLinkActiveOptions: { exact: true }
+    },
+    {
+      label: 'NgRx',
+      icon: 'pi pi-sitemap',
+      routerLink: '/codexngrx',
+      routerLinkActiveOptions: { exact: true }
+    },
+    {
+      label: 'Frontend',
+      icon: 'pi pi-desktop',
+      routerLink: '/codexfrontend',
+      routerLinkActiveOptions: { exact: true }
+    },
+    {
+      label: 'Arquitectura',
+      icon: 'pi pi-sitemap',
+      routerLink: '/codexarchitecture',
+      routerLinkActiveOptions: { exact: true }
+    },
+    {
+      label: 'Testing',
+      icon: 'pi pi-check-circle',
+      routerLink: '/codextesting',
+      routerLinkActiveOptions: { exact: true }
+    },
+    {
+      label: 'Git',
       icon: 'pi pi-code',
-      routerLink: '/lab',
+      routerLink: '/codexgit',
       routerLinkActiveOptions: { exact: true }
     }
   ];
