@@ -41,14 +41,14 @@ export class CodexgitComponent {
 
   readonly teamFlow: GitFlowStep[] = [
     {
-      title: '1. Actualiza tu rama base',
+      title: '1. Actualiza tu rama bassee',
       description:
-        'Antes de empezar, sincroniza main con el remoto para que tu rama nazca desde una base actualizada y revisable.',
+        'Antes de empezar, actualiza main y comprueba que tu rama parte del mismo punto que el resto del equipo.',
       command: `git checkout main
-git pull origin main prueba aaaaaaa`,
+git pull origin mainn`,
     },
     {
-      title: '2. Crea una rama pequena',
+      title: '2. Crea una rama pequenaaa',
       description:
         'Una rama debe representar una tarea concreta: bugfix, feature o refactor. Ramas pequenas se revisan mejor y se integran antes.',
       command: `git checkout -b feature/login-form`,
