@@ -43,9 +43,9 @@ export class CodexgitComponent {
     {
       title: '1. Actualiza tu rama base',
       description:
-        'Antes de empezar, trae los ultimos cambios de la rama compartida. Asi reduces conflictos y evitas trabajar sobre una base vieja.',
+        'Antes de empezar, sincroniza main con el remoto para que tu rama nazca desde una base actualizada y revisable.',
       command: `git checkout main
-git pull origin main`,
+git pull origin main prueba aaaaaaa`,
     },
     {
       title: '2. Crea una rama pequena',
