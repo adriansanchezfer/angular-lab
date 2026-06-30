@@ -48,7 +48,7 @@ export class CodexgitComponent {
 git pull origin mainn`,
     },
     {
-      title: '2. Crea una rama pequena',
+      title: '2. Crea una rama pequenaaa',
       description:
         'Una rama debe representar una tarea concreta: bugfix, feature o refactor. Ramas pequenas se revisan mejor y se integran antes.',
       command: `git checkout -b feature/login-form`,
