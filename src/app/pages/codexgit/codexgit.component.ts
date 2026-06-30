@@ -45,7 +45,7 @@ export class CodexgitComponent {
       description:
         'Antes de empezar, sincroniza main con el remoto para que tu rama nazca desde una base actualizada y revisable.',
       command: `git checkout main
-git pull origin main prueba`,
+git pull origin main prueba aaaaaaa`,
     },
     {
       title: '2. Crea una rama pequena',
