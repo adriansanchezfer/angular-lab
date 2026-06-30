@@ -41,7 +41,7 @@ export class CodexgitComponent {
 
   readonly teamFlow: GitFlowStep[] = [
     {
-      title: '1. Actualiza tu rama basee',
+      title: '1. Actualiza tu rama bassee',
       description:
         'Antes de empezar, actualiza main y comprueba que tu rama parte del mismo punto que el resto del equipo.',
       command: `git checkout main
