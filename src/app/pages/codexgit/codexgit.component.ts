@@ -45,7 +45,7 @@ export class CodexgitComponent {
       description:
         'Antes de empezar, actualiza main y comprueba que tu rama parte del mismo punto que el resto del equipo.',
       command: `git checkout main
-git pull origin main`,
+git pull origin mainn`,
     },
     {
       title: '2. Crea una rama pequena',
