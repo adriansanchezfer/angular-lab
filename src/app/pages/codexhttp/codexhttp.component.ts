@@ -245,10 +245,12 @@ export const appConfig = {
   ];
 
   reload(): void {
+       console.log('tercera rama')
     this.refreshProducts.next();
   }
 
   runGet(): void {
+    console.log('tercera rama')
     this.runRequest('GET', this.http.get<Product>(`${this.apiBaseUrl}/products/1`));
   }
 
