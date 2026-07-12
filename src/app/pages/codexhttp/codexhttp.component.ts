@@ -247,6 +247,7 @@ export const appConfig = {
   reload(): void {
        console.log('tercera rama')
     this.refreshProducts.next();
+    console.log('blabalbal')
   }
 
   runGet(): void {
